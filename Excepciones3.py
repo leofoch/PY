@@ -1,7 +1,6 @@
 def evalEdad(edad):
     if edad<0:
-        raise ZeroDivisioError("No se permiten edades negativas")
-   
+        raise ValueError ("No se permiten edades negativas")
     if edad<20:
         return "Muy Joven"
     elif edad<40:
@@ -11,5 +10,9 @@ def evalEdad(edad):
     elif edad<100:
         return "Cuidate"
 
+try:
+    print(evalEdad(-18))
+except ValueError as ErrorNroNegativo:
+    print(ErrorNroNegativo)
 
-print(evalEdad(-18))
+
